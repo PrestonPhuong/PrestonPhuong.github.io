@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thời khóa biểu · Tuần này</title>
+    <style>
+        /* ===== toàn bộ CSS từ claude-like-dark.css ===== */
+        :root {
+            --side-bar-bg-color: #161310;
+            --control-text-color: #a6988a;
+            --text-color: #dcd3c9;
+            --bg-color: #14110f;
+            --window-bg-color: #171411;
+            --select-text-bg-color: #594133;
+            --item-hover-bg-color: rgba(212, 148, 102, 0.1);
+            --code-bg-color: #1c1816;
+            --code-text-color: #e7ded4;
+            --code-border-color: #322a24;
+            --border-color: #2e2823;
+            --accent-color: #d49466;
+            --heading-color: #f1e8de;
+            --quote-bg-color: #1b1714;
+            --quote-border-color: #4b3f36;
+            --quote-text-color: #cfc1b3;
+            --table-alt-color: #191512;
+            --font-body: "Anthropic Serif", Georgia, "Times New Roman", "Songti SC", "Noto Serif CJK SC", "Source Han Serif SC", "PingFang SC", "Hiragino Sans GB", serif;
+            --font-ui: "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Source Han Sans SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+            --font-mono: Menlo, Monaco, "SF Mono", Consolas, "Sarasa Mono SC", "Cascadia Code", monospace;
+            --table-border-strong-color: #594b40;
+            --table-row-border-color: rgba(231, 222, 212, 0.14);
+            --table-hover-color: rgba(212, 148, 102, 0.06);
+            --code-muted-color: #9e8e80;
+            --code-keyword-color: #b798fe;
+            --code-string-color: #80ca81;
+            --code-number-color: #d8a46e;
+            --code-symbol-color: #88b0e9;
+            --inline-code-color: #e09f91;
+            --inline-code-bg-color: #231c18;
+            --inline-code-border-color: #392f28;
+            --rawblock-edit-panel-bd: var(--code-bg-color);
+        }
+
+        @include-when-export url(https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&family=Source+Serif+4:wght@400;600;700&display=swap);
+
+        html {
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            background-color: var(--bg-color);
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.62;
+            letter-spacing: 0;
+            font-weight: 400;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 2rem 1.5rem;
+        }
+
+        #write {
+            max-width: 880px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 32px 32px 104px;
+            background-color: var(--bg-color);
+        }
+
+        @media only screen and (min-width: 1400px) {
+            #write {
+                max-width: 820px;
+            }
+        }
+
+        @media only screen and (min-width: 1800px) {
+            #write {
+                max-width: 880px;
+            }
+        }
+
+        @media only screen and (max-width: 768px) {
+            #write {
+                padding: 24px 20px 84px;
+            }
+        }
+
+        #write>ul:first-child,
+        #write>ol:first-child {
+            margin-top: 30px;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #eeb791;
+            text-decoration: underline;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            position: relative;
+            margin-top: 1.45rem;
+            margin-bottom: 0.7rem;
+            font-family: var(--font-body);
+            font-weight: 600;
+            line-height: 1.3;
+            color: var(--heading-color);
+            letter-spacing: 0;
+            cursor: text;
+        }
+
+        h1:hover a.anchor,
+        h2:hover a.anchor,
+        h3:hover a.anchor,
+        h4:hover a.anchor,
+        h5:hover a.anchor,
+        h6:hover a.anchor {
+            text-decoration: none;
+        }
+
+        h1 tt,
+        h1 code {
+            font-size: inherit;
+        }
+
+        h2 tt,
+        h2 code {
+            font-size: inherit;
+        }
+
+        h3 tt,
+        h3 code {
+            font-size: inherit;
+        }
+
+        h4 tt,
+        h4 code {
+            font-size: inherit;
+        }
+
+        h5 tt,
+        h5 code {
+            font-size: inherit;
+        }
+
+        h6 tt,
+        h6 code {
+            font-size: inherit;
+        }
+
+        h1 {
+            font-size: 1.84em;
+            line-height: 1.16;
+            margin-top: 0.35rem;
+        }
+
+        h2 {
+            font-size: 1.48em;
+            line-height: 1.2;
+        }
+
+        h3 {
+            font-size: 1.24em;
+            line-height: 1.32;
+        }
+
+        h4 {
+            font-size: 1.12em;
+        }
+
+        h5 {
+            font-size: 1em;
+        }
+
+        h6 {
+            font-size: 1em;
+            color: var(--control-text-color);
+        }
+
+        p,
+        blockquote,
+        ul,
+        ol,
+        dl,
+        table {
+            margin: 0.78em 0;
+        }
+
+        strong,
+        b {
+            font-family: var(--font-body);
+            font-weight: 700;
+            color: var(--heading-color);
+            font-synthesis: weight;
+            letter-spacing: 0;
+        }
+
+        li>ol,
+        li>ul {
+            margin: 0;
+        }
+
+        hr {
+            height: 1px;
+            padding: 0;
+            margin: 26px 0;
+            background-color: var(--border-color);
+            border: 0 none;
+            overflow: hidden;
+            box-sizing: content-box;
+            opacity: 0.8;
+        }
+
+        li p.first {
+            display: inline-block;
+        }
+
+        ul,
+        ol {
+            padding-left: 1.45rem;
+        }
+
+        li {
+            padding-left: 0.15rem;
+        }
+
+        ul li::marker,
+        ol li::marker {
+            color: var(--control-text-color);
+        }
+
+        ul:first-child,
+        ol:first-child {
+            margin-top: 0;
+        }
+
+        ul:last-child,
+        ol:last-child {
+            margin-bottom: 0;
+        }
+
+        blockquote {
+            border-left: 2px solid var(--quote-border-color);
+            background-color: var(--quote-bg-color);
+            padding: 0.55rem 1rem;
+            color: var(--quote-text-color);
+            border-radius: 10px;
+        }
+
+        blockquote blockquote {
+            padding-right: 0;
+        }
+
+        table {
+            padding: 0;
+            width: 100%;
+            border-collapse: collapse;
+            border-top: 1px solid var(--table-border-strong-color);
+            border-bottom: 1px solid var(--table-border-strong-color);
+            background-color: transparent;
+            word-break: initial;
+        }
+
+        table tr {
+            border: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        table tr:nth-child(2n),
+        table thead {
+            background-color: transparent;
+        }
+
+        table thead tr {
+            border-bottom: 1px solid var(--table-border-strong-color);
+        }
+
+        table tbody tr {
+            border-bottom: 1px solid var(--table-row-border-color);
+        }
+
+        table th {
+            font-family: var(--font-body);
+            font-weight: 600;
+            border: 0;
+            margin: 0;
+            padding: 12px 18px 11px 0;
+            text-align: left;
+            vertical-align: bottom;
+            color: var(--heading-color);
+            font-size: 0.93rem;
+            line-height: 1.48;
+            letter-spacing: 0;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+
+        table td {
+            border: 0;
+            margin: 0;
+            padding: 12px 18px 12px 0;
+            vertical-align: top;
+            font-family: var(--font-body);
+            font-size: 0.93rem;
+            line-height: 1.56;
+            font-weight: 400;
+            font-variant-numeric: lining-nums tabular-nums;
+        }
+
+        table th:first-child,
+        table td:first-child {
+            margin-top: 0;
+            color: var(--heading-color);
+        }
+
+        table th:last-child,
+        table td:last-child {
+            margin-bottom: 0;
+            padding-right: 0;
+        }
+
+        table tbody tr:first-child td {
+            padding-top: 12px;
+        }
+
+        table tbody tr:last-child {
+            border-bottom: 0;
+        }
+
+        table tbody tr:last-child td {
+            padding-bottom: 12px;
+        }
+
+        table tbody tr:hover td {
+            background-color: var(--table-hover-color);
+        }
+
+        table td strong,
+        table th strong {
+            font-family: var(--font-body);
+            font-weight: 700;
+            color: var(--heading-color);
+        }
+
+        .CodeMirror-lines {
+            padding-left: 0;
+        }
+
+        .code-tooltip {
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.24);
+            border-top: 1px solid var(--code-border-color);
+        }
+
+        .md-fences {
+            font-family: var(--font-mono);
+            border: 1px solid var(--code-border-color);
+            background-color: var(--code-bg-color);
+            color: var(--code-text-color);
+            border-radius: 8px;
+            padding: 0.9rem 1rem 0.85rem;
+            font-size: 0.9em;
+            box-shadow: 0 1px 0 rgba(254, 254, 254, 0.02);
+            margin-bottom: 18px;
+            margin-top: 14px;
+            line-height: 1.55;
+        }
+
+        code,
+        tt {
+            font-family: var(--font-mono);
+            border: 1px solid var(--inline-code-border-color);
+            background-color: var(--inline-code-bg-color);
+            color: var(--inline-code-color);
+            border-radius: 999px;
+            padding: 0.08em 0.42em 0.1em;
+            font-size: 0.9em;
+            box-shadow: inset 0 1px 0 rgba(254, 254, 254, 0.03);
+        }
+
+        .md-inline-math,
+        .md-inline-math .MathJax,
+        .md-inline-math .MathJax_SVG,
+        .md-inline-math mjx-container {
+            font-size: 1.08em !important;
+        }
+
+        .md-fences pre,
+        .md-fences code,
+        .md-fences tt,
+        .md-fences .CodeMirror,
+        .md-fences .CodeMirror pre,
+        .md-fences .cm-s-inner {
+            font-family: var(--font-mono) !important;
+            color: inherit !important;
+        }
+
+        .md-fences .cm-s-inner span {
+            font-family: var(--font-mono) !important;
+        }
+
+        #typora-source .cm-s-inner {
+            color: var(--code-text-color) !important;
+        }
+
+        .md-fences code,
+        .md-fences tt {
+            border: 0 !important;
+            background: transparent !important;
+            padding: 0 !important;
+            border-radius: 0 !important;
+            box-shadow: none !important;
+        }
+
+        .md-fences .CodeMirror,
+        .md-fences .CodeMirror-scroll,
+        .md-fences .CodeMirror-sizer,
+        .md-fences .CodeMirror-gutters,
+        .md-fences .CodeMirror-lines {
+            background-color: transparent !important;
+        }
+
+        .md-fences .CodeMirror-cursor {
+            border-left: 1px solid var(--code-text-color) !important;
+        }
+
+        .md-fences .CodeMirror-linenumber,
+        .md-fences .cm-comment,
+        .md-fences .cm-meta {
+            color: var(--code-muted-color) !important;
+        }
+
+        .md-fences .cm-keyword,
+        .md-fences .cm-def,
+        .md-fences .cm-variable-2,
+        .md-fences .cm-variable-3,
+        .md-fences .cm-atom,
+        .md-fences .cm-builtin {
+            color: var(--code-keyword-color) !important;
+        }
+
+        .md-fences .cm-string,
+        .md-fences .cm-string-2 {
+            color: var(--code-string-color) !important;
+        }
+
+        .md-fences .cm-number {
+            color: var(--code-number-color) !important;
+        }
+
+        .md-fences .cm-tag,
+        .md-fences .cm-attribute,
+        .md-fences .cm-property,
+        .md-fences .cm-qualifier,
+        .md-fences .cm-link {
+            color: var(--code-symbol-color) !important;
+        }
+
+        .md-fences .cm-operator,
+        .md-fences .cm-variable,
+        .md-fences .cm-bracket {
+            color: var(--code-text-color) !important;
+        }
+
+        #typora-source .cm-s-inner .cm-operator,
+        #typora-source .cm-s-inner .cm-property,
+        #typora-source .cm-s-inner .cm-variable,
+        #typora-source .cm-s-inner .cm-bracket {
+            color: var(--code-text-color) !important;
+        }
+
+        .md-task-list-item>input {
+            margin-left: -1.3em;
+            accent-color: var(--accent-color);
+        }
+
+        @media print {
+            html {
+                font-size: 13px;
+            }
+            pre {
+                page-break-inside: avoid;
+                word-wrap: break-word;
+            }
+        }
+
+        #write pre.md-meta-block {
+            padding: 1rem;
+            font-size: 85%;
+            line-height: 1.5;
+            background-color: #1e1a17;
+            border: 0;
+            border-radius: 10px;
+            color: #b2a291;
+            margin-top: 0 !important;
+        }
+
+        .mathjax-block>.code-tooltip {
+            bottom: 0.375rem;
+        }
+
+        .md-mathjax-midline {
+            background: #201b17;
+        }
+
+        div.code-tooltip,
+        div.code-tooltip-content,
+        .md-hover-tip .md-arrow:after,
+        .popover.bottom>.arrow:after {
+            background: var(--code-bg-color) !important;
+            color: var(--code-text-color) !important;
+        }
+
+        #write>h3.md-focus:before {
+            left: -1.5625rem;
+            top: 0.375rem;
+        }
+
+        #write>h4.md-focus:before {
+            left: -1.5625rem;
+            top: 0.285714286rem;
+        }
+
+        #write>h5.md-focus:before {
+            left: -1.5625rem;
+            top: 0.285714286rem;
+        }
+
+        #write>h6.md-focus:before {
+            left: -1.5625rem;
+            top: 0.285714286rem;
+        }
+
+        .md-image>.md-meta {
+            border-radius: 3px;
+            padding: 2px 0 0 4px;
+            font-size: 0.9em;
+            color: inherit;
+        }
+
+        .md-tag {
+            color: #a68b75;
+            opacity: 1;
+        }
+
+        .md-toc {
+            margin-top: 20px;
+            padding: 18px 20px;
+            background-color: #191512;
+            border-radius: 10px;
+        }
+
+        .sidebar-tabs {
+            border-bottom: none;
+        }
+
+        #typora-sidebar {
+            background-color: var(--side-bar-bg-color);
+        }
+
+        #typora-sidebar,
+        #sidebar-content,
+        #file-library,
+        #file-library-list,
+        #file-library-tree,
+        #outline-content,
+        .sidebar-content,
+        .sidebar-content-content,
+        .file-list-item,
+        .file-node-content,
+        .outline-item,
+        .outline-label,
+        .ty-side-sort-btn {
+            font-family: var(--font-ui) !important;
+            color: var(--text-color);
+        }
+
+        #file-library-list *:not(.fa):not(.file-node-icon):not(.file-node-open-state),
+        #file-library-tree *:not(.fa):not(.file-node-icon):not(.file-node-open-state),
+        #outline-content *:not(.fa):not(.outline-expander),
+        .sidebar-tabs,
+        .sidebar-tabs * {
+            font-family: var(--font-ui) !important;
+        }
+
+        .file-list-item-file-name,
+        .file-list-item-file-ext-part,
+        .file-list-item-summary,
+        .file-list-item-parent-loc,
+        .file-node-title,
+        .file-node-title-name-part,
+        .file-node-title-ext-part,
+        .outline-label,
+        .outline-item span {
+            font-family: var(--font-ui) !important;
+        }
+
+        .file-list-item-summary,
+        .file-list-item-parent-loc,
+        .file-node-icon,
+        .file-node-open-state,
+        .outline-expander {
+            color: var(--control-text-color);
+        }
+
+        .outline-item:hover,
+        .file-list-item:hover,
+        .ty-side-sort-btn.active,
+        .outline-expander:hover {
+            background-color: var(--item-hover-bg-color);
+        }
+
+        .file-list-item.active,
+        .file-tree-node.active>.file-node-background,
+        .outline-item.active {
+            background-color: rgba(212, 148, 102, 0.18);
+            border-left: 0;
+            box-shadow: inset 3px 0 0 var(--accent-color);
+        }
+
+        .file-list-item.active,
+        .file-tree-node.active>.file-node-content,
+        .outline-item.active {
+            color: var(--heading-color);
+        }
+
+        .file-list-item-file-ext-part,
+        .file-node-title-ext-part {
+            opacity: 1;
+            color: var(--text-color);
+        }
+
+        .file-list-item.active .file-list-item-file-ext-part,
+        .file-tree-node.active .file-node-title-ext-part {
+            color: var(--heading-color);
+        }
+
+        #typora-quick-open {
+            border: 1px solid var(--border-color);
+            background-color: #1a1613;
+        }
+
+        #typora-quick-open-item {
+            background-color: #161310;
+            border-color: #201b16 #2e2823 #2e2823 #241e19;
+            border-style: solid;
+            border-width: 1px;
+        }
+
+        .on-focus-mode blockquote {
+            border-left-color: rgba(208, 137, 87, 0.2);
+        }
+
+        header,
+        .context-menu,
+        .megamenu-content,
+        footer {
+            font-family: var(--font-ui);
+        }
+
+        .os-windows #megamenu-menu-sidebar,
+        .os-windows .megamenu-menu,
+        .os-windows .megamenu-menu-header,
+        .os-windows #megamenu-menu-list,
+        .os-windows .megamenu-content {
+            font-family: var(--font-ui) !important;
+            background-color: var(--window-bg-color);
+            color: var(--text-color);
+        }
+
+        .os-windows header,
+        .os-windows.megamenu-opened header,
+        .os-windows #top-titlebar,
+        .os-windows footer,
+        .os-windows footer.ty-footer,
+        .os-windows .ty-footer {
+            background-color: var(--bg-color) !important;
+            color: var(--text-color);
+        }
+
+        .os-windows #top-titlebar>*,
+        .os-windows #top-titlebar .titlebar-button,
+        .os-windows #top-titlebar .window-control {
+            background-color: transparent;
+        }
+
+        .os-windows header>*:not(#top-titlebar):not(.titlebar-button):not(.window-control),
+        .os-windows header>*:not(#top-titlebar):not(.titlebar-button):not(.window-control) *:not(.fa),
+        .os-windows footer,
+        .os-windows .ty-footer {
+            font-family: var(--font-ui) !important;
+        }
+
+        .os-windows footer .ty-icon,
+        .os-windows footer .ty-icon:before,
+        .os-windows .ty-footer .ty-icon,
+        .os-windows .ty-footer .ty-icon:before,
+        .os-windows #ty-sidebar-footer .ty-icon,
+        .os-windows #ty-sidebar-footer .ty-icon:before,
+        .os-windows #ty-sidebar-footer .ty-add:before,
+        .os-windows #ty-sidebar-footer .ty-three-cells:before,
+        .os-windows #ty-sidebar-footer .ty-file-tree:before,
+        .os-windows #typora-sidebar .sidebar-footer .ty-icon,
+        .os-windows #typora-sidebar .sidebar-footer .ty-icon:before {
+            font-family: "typora-icon" !important;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+        }
+
+        .os-windows #megamenu-menu-sidebar,
+        .os-windows #megamenu-menu-sidebar *:not(.fa),
+        .os-windows .megamenu-menu-header,
+        .os-windows .megamenu-menu-header *:not(.fa),
+        .os-windows #megamenu-menu-list,
+        .os-windows #megamenu-menu-list *:not(.fa),
+        .os-windows .megamenu-menu-panel,
+        .os-windows .megamenu-menu-panel *:not(.fa) {
+            font-family: var(--font-ui) !important;
+        }
+
+        .os-windows.megamenu-opened header,
+        .os-windows #top-titlebar,
+        .os-windows #megamenu-menu-sidebar,
+        .os-windows .megamenu-menu,
+        .os-windows .megamenu-menu-header,
+        .os-windows #megamenu-menu-list,
+        .os-windows.megamenu-opened content,
+        .os-windows.megamenu-opened #megamenu-content,
+        .os-windows.megamenu-opened .megamenu-content,
+        .os-windows footer.ty-footer {
+            background-image: none !important;
+        }
+
+        .os-windows.megamenu-opened content,
+        .os-windows.megamenu-opened #megamenu-content,
+        .os-windows.megamenu-opened .megamenu-content {
+            background-color: var(--bg-color) !important;
+            color: var(--text-color);
+        }
+
+        .os-windows.megamenu-opened #typora-sidebar {
+            pointer-events: none !important;
+        }
+
+        .os-windows.megamenu-opened #typora-sidebar-resizer {
+            display: none !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+        }
+
+        .os-windows #megamenu-menu-sidebar,
+        .os-windows .megamenu-menu {
+            box-shadow: none;
+            border-right: 1px solid var(--border-color);
+        }
+
+        .os-windows .megamenu-menu-header {
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .os-windows #megamenu-back-btn,
+        .os-windows .megamenu-menu-header #megamenu-menu-header-title,
+        .os-windows .megamenu-menu-header #megamenu-menu-header-title:before {
+            color: var(--text-color);
+            border-color: var(--border-color);
+        }
+
+        .os-windows #megamenu-menu-list li,
+        .os-windows #megamenu-menu-list li a,
+        .os-windows .megamenu-menu-list li,
+        .os-windows .megamenu-menu-list li a {
+            color: var(--text-color);
+            opacity: 1;
+        }
+
+        .os-windows #megamenu-menu-list li a:hover,
+        .os-windows #megamenu-menu-list li a.active,
+        .os-windows .megamenu-menu-list li a:hover,
+        .os-windows .megamenu-menu-list li a.active {
+            color: var(--heading-color);
+            background-color: var(--item-hover-bg-color);
+        }
+
+        .os-windows #megamenu-menu-list li.disabled,
+        .os-windows #megamenu-menu-list li.disabled a,
+        .os-windows .megamenu-menu-list li.disabled,
+        .os-windows .megamenu-menu-list li.disabled a {
+            color: var(--control-text-color);
+            opacity: 0.68;
+        }
+
+        .os-windows .megamenu-menu-panel,
+        .os-windows .megamenu-menu-panel table,
+        .os-windows .megamenu-menu-panel tbody,
+        .os-windows .megamenu-menu-panel tr,
+        .os-windows .megamenu-menu-panel td {
+            color: var(--text-color);
+        }
+
+        .os-windows .megamenu-menu-panel table tr,
+        .os-windows .megamenu-menu-panel table tr:nth-child(2n),
+        .os-windows .megamenu-menu-panel table td {
+            background-color: transparent !important;
+        }
+
+        .os-windows .long-btn:hover,
+        .os-windows .megamenu-menu-panel tbody tr:hover td {
+            background-color: var(--item-hover-bg-color);
+        }
+
+        .file-node-content:hover .file-node-icon,
+        .file-node-content:hover .file-node-open-state {
+            visibility: visible;
+        }
+
+        .mac-seamless-mode #typora-sidebar {
+            background-color: var(--side-bar-bg-color);
+        }
+
+        .mac-os #write {
+            caret-color: var(--accent-color);
+        }
+
+        .md-lang {
+            color: #b59076;
+        }
+
+        #md-notification .btn {
+            border: 0;
+        }
+
+        .dropdown-menu {
+            background-color: #191512;
+            border-color: var(--border-color);
+        }
+
+        .dropdown-menu .divider {
+            border-color: #332c26;
+            opacity: 0.6;
+        }
+
+        .ty-preferences .window-content {
+            background-color: var(--window-bg-color);
+        }
+
+        .ty-preferences .nav-group-item.active {
+            color: #fefefe;
+            background: #a7663d;
+        }
+
+        .menu-item-container a.menu-style-btn {
+            background-color: #201a16;
+            background-image: linear-gradient(180deg, rgba(254, 254, 254, 0.08), rgba(254, 254, 254, 0));
+        }
+
+        /* ===== bổ sung riêng cho layout thời khóa biểu ===== */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            flex-wrap: wrap;
+            gap: 0.75rem 1.5rem;
+            margin-bottom: 1.8rem;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2rem;
+            background: linear-gradient(135deg, var(--heading-color) 40%, var(--accent-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sub {
+            font-size: 0.9rem;
+            color: var(--control-text-color);
+            background: var(--code-bg-color);
+            padding: 0.3rem 1.2rem;
+            border-radius: 40px;
+            border: 1px solid var(--border-color);
+            white-space: nowrap;
+            font-family: var(--font-ui);
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            border-radius: 10px;
+            margin-top: 0.2rem;
+        }
+
+        table {
+            min-width: 600px;
+            width: 100%;
+        }
+
+        /* làm nổi bật cột ngày và tiết */
+        td:first-child {
+            font-weight: 600;
+            color: var(--heading-color);
+            width: 80px;
+            min-width: 80px;
+        }
+
+        td:nth-child(2) {
+            white-space: nowrap;
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        td:nth-child(4) {
+            white-space: nowrap;
+        }
+
+        /* phòng trực tuyến có màu phụ */
+        .room-online strong {
+            color: var(--code-string-color);
+        }
+
+        /* tăng hiệu ứng hover cho toàn bộ hàng */
+        tbody tr:hover td {
+            background-color: var(--item-hover-bg-color) !important;
+        }
+
+        /* responsive */
+        @media (max-width: 700px) {
+            body {
+                padding: 1rem 0.75rem;
+            }
+            #write {
+                padding: 20px 16px 80px;
+            }
+            .header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3rem;
+            }
+            .header h1 {
+                font-size: 1.6rem;
+            }
+            .sub {
+                font-size: 0.75rem;
+                padding: 0.2rem 0.9rem;
+            }
+            table {
+                font-size: 0.82rem;
+                min-width: 500px;
+            }
+            table th,
+            table td {
+                padding: 10px 12px 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 0.5rem 0.25rem;
+            }
+            #write {
+                padding: 16px 10px 64px;
+            }
+            table {
+                font-size: 0.7rem;
+                min-width: 420px;
+            }
+            table th,
+            table td {
+                padding: 8px 8px 8px 0;
+            }
+            td:first-child {
+                width: 56px;
+                min-width: 56px;
+            }
+            td:nth-child(2) {
+                min-width: 64px;
+            }
+            .header h1 {
+                font-size: 1.3rem;
+            }
+            .sub {
+                font-size: 0.65rem;
+            }
+        }
+
+        .table-wrap::-webkit-scrollbar {
+            height: 6px;
+        }
+        .table-wrap::-webkit-scrollbar-track {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+        }
+        .table-wrap::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 12px;
+        }
+        .table-wrap::-webkit-scrollbar-thumb:hover {
+            background: var(--control-text-color);
+        }
+    </style>
+</head>
+<body>
+
+    <div id="write">
+
+        <!-- header -->
+        <div class="header">
+            <h1>📋 Thời khóa biểu</h1>
+            <span class="sub">Tuần này · 2026</span>
+        </div>
+
+        <!-- bảng -->
+        <div class="table-wrap">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Thứ</th>
+                        <th>Tiết</th>
+                        <th>Môn học</th>
+                        <th>Phòng</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>T2</strong></td>
+                        <td>2 – 5</td>
+                        <td><strong>HUS1022 — Nhập môn Internet kết nối vạn vật</strong></td>
+                        <td>🏫 <strong>HT3-139</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>T2</strong></td>
+                        <td>7 – 10</td>
+                        <td><strong>MAT1131 — Giải tích cho KH&amp;KT 1</strong></td>
+                        <td>🏫 <strong>HT3-133</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>T3</strong></td>
+                        <td>2 – 5</td>
+                        <td><strong>PHY1050 — Cơ học</strong></td>
+                        <td>🏫 <strong>HT3-136</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>T4</strong></td>
+                        <td>2 – 5</td>
+                        <td><strong>HUS1024 — Nhập môn Robotics</strong></td>
+                        <td>🏫 <strong>HT3-133</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>T4</strong></td>
+                        <td>7 – 10</td>
+                        <td><strong>MAT1131 — Giải tích cho KH&amp;KT 1</strong></td>
+                        <td>🏫 <strong>HT3-137</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>T5</strong></td>
+                        <td>2 – 5</td>
+                        <td><strong>PHY1050 — Cơ học</strong></td>
+                        <td>🏫 <strong>HT3-135</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>T6</strong></td>
+                        <td>2 – 5</td>
+                        <td><strong>PHI1006 — Triết học Mác–Lênin</strong></td>
+                        <td class="room-online">💻 <strong>Trực tuyến</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>T6</strong></td>
+                        <td>7 – 9</td>
+                        <td><strong>VNU1001 — Nhập môn công nghệ số &amp; ứng dụng AI</strong></td>
+                        <td class="room-online">💻 <strong>Trực tuyến</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+</body>
+</html>
