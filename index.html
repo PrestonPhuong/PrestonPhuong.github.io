@@ -6,27 +6,141 @@
 <title>Phương Hòa Bình — Gia sư tiếng Anh online</title>
 <meta name="description" content="Phương Hòa Bình — Gia sư tiếng Anh online. Ôn thi tiếng Anh và củng cố nền tảng cho học sinh, sinh viên. 50.000đ/giờ.">
 
+<!-- Đặt theme sớm để tránh nhấp nháy -->
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem('theme');
+    if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+  }catch(e){}
+})();
+</script>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
 <style>
 /* ============================================================
    BIẾN MÀU & THIẾT LẬP CHUNG
    ============================================================ */
 :root{
+  /* Brand (không đổi theo theme) */
   --navy:        #0d2a4a;
   --navy-soft:   #16456f;
   --navy-deep:   #081d33;
   --gold:        #c9922c;
   --gold-light:  #f0d9a4;
-  --gold-soft:   #fdf6e6;
-  --ink:         #12233a;
-  --muted:       #5f7186;
-  --line:        #e4eaf1;
-  --bg-dark:     #081d33;
-  --bg-dark-2:   #0d2a4a;
-  --card:        #ffffff;
+
   --radius:      18px;
   --gap:         14px;
-  --shadow:      0 1px 2px rgba(0,0,0,.25), 0 18px 40px -22px rgba(0,0,0,.75);
   --font: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+
+  /* ---------- DARK THEME (mặc định) ---------- */
+  --card:           #0e2a47;      /* nền các khối/card */
+  --card-soft:      #13354f;      /* nền phụ bên trong card */
+  --card-border:    rgba(255,255,255,.10);
+  --card-shadow:    0 1px 2px rgba(0,0,0,.28), 0 18px 40px -22px rgba(0,0,0,.80);
+
+  --text:           #dbe6f2;      /* chữ thường */
+  --text-strong:    #ffffff;      /* chữ nhấn */
+  --text-muted:     #93a8bf;      /* chữ mờ */
+  --heading:        #ffffff;      /* tiêu đề */
+  --line:           rgba(255,255,255,.12);
+
+  --page-glow-1:    radial-gradient(1200px 600px at 50% -180px, #16456f 0%, transparent 65%);
+  --page-glow-2:    radial-gradient(900px 500px at 50% 110%, #0a2440 0%, transparent 60%);
+  --page-base:      linear-gradient(180deg, #081d33 0%, #0d2a4a 100%);
+  --page-deco-1:    rgba(201,146,44,.07);
+  --page-deco-2:    rgba(120,180,255,.06);
+
+  --chip-bg:        rgba(201,146,44,.15);
+  --chip-border:    rgba(201,146,44,.45);
+  --accent-strong:  #f0d9a4;      /* chữ vàng nhấn */
+
+  --price-bg:       linear-gradient(160deg, #143a5e, #0e2a47);
+  --price-border:   #c9922c;
+  --price-text:     #f0d9a4;
+  --price-sub:      #c9b78a;
+  --price-sub-strong: #f0d9a4;
+
+  --block-bg:       linear-gradient(140deg, #16456f 0%, #0d2a4a 55%, #081d33 100%);
+  --block-text:     #eaf1f8;
+  --block-muted:    rgba(234,241,248,.72);
+  --block-line:     rgba(255,255,255,.14);
+  --block-item-bg:  rgba(255,255,255,.07);
+  --block-item-bd:  rgba(255,255,255,.16);
+
+  --btn-bg:         rgba(255,255,255,.10);
+  --btn-border:     rgba(255,255,255,.16);
+  --btn-color:      #93a8bf;
+  --btn-hover:      #ffffff;
+
+  /* Navbar */
+  --nav-bg:         rgba(8, 29, 51, .88);
+  --nav-border:     rgba(201,146,44,.28);
+  --nav-shadow:     0 8px 24px -18px rgba(0,0,0,.8);
+  --nav-brand:      #ffffff;
+  --nav-link:       #cfdce9;
+  --nav-link-hover: #f0d9a4;
+  --nav-hover-bg:   rgba(201,146,44,.16);
+  --nav-btn-bg:     rgba(255,255,255,.07);
+  --nav-btn-border: rgba(255,255,255,.22);
+  --nav-btn-color:  #d6e2ef;
+  --nav-divider:    rgba(255,255,255,.12);
+}
+
+/* ---------- LIGHT THEME ---------- */
+html[data-theme="light"]{
+  --card:           #ffffff;
+  --card-soft:      #f6f9fc;
+  --card-border:    #e4eaf1;
+  --card-shadow:    0 1px 2px rgba(13,42,74,.05), 0 18px 40px -22px rgba(13,42,74,.28);
+
+  --text:           #12233a;
+  --text-strong:    #0d2a4a;
+  --text-muted:     #5f7186;
+  --heading:        #0d2a4a;
+  --line:           #e4eaf1;
+
+  --page-glow-1:    radial-gradient(1200px 600px at 50% -180px, #dbe7f3 0%, transparent 65%);
+  --page-glow-2:    radial-gradient(900px 500px at 50% 110%, #eef4fa 0%, transparent 60%);
+  --page-base:      linear-gradient(180deg, #f7fafc 0%, #e6edf5 100%);
+  --page-deco-1:    rgba(201,146,44,.10);
+  --page-deco-2:    rgba(80,140,220,.08);
+
+  --chip-bg:        #fdf6e6;
+  --chip-border:    #f0dfb6;
+  --accent-strong:  #8a6414;
+
+  --price-bg:       #fdf6e6;
+  --price-border:   #e2c47f;
+  --price-text:     #8a6414;
+  --price-sub:      #96731f;
+  --price-sub-strong: #7a5710;
+
+  --block-bg:       linear-gradient(140deg, #eef4fa 0%, #dbe7f3 55%, #cfe0f0 100%);
+  --block-text:     #0d2a4a;
+  --block-muted:    #4a5c72;
+  --block-line:     rgba(13,42,74,.12);
+  --block-item-bg:  rgba(255,255,255,.70);
+  --block-item-bd:  rgba(13,42,74,.10);
+
+  --btn-bg:         #ffffff;
+  --btn-border:     #e4eaf1;
+  --btn-color:      #5f7186;
+  --btn-hover:      #0d2a4a;
+
+  --nav-bg:         rgba(255, 255, 255, .88);
+  --nav-border:     rgba(201,146,44,.35);
+  --nav-shadow:     0 8px 24px -18px rgba(13,42,74,.35);
+  --nav-brand:      #0d2a4a;
+  --nav-link:       #4a5c72;
+  --nav-link-hover: #8a6414;
+  --nav-hover-bg:   rgba(201,146,44,.14);
+  --nav-btn-bg:     rgba(13,42,74,.04);
+  --nav-btn-border: rgba(13,42,74,.22);
+  --nav-btn-color:  #0d2a4a;
+  --nav-divider:    rgba(13,42,74,.10);
 }
 
 *{ box-sizing: border-box; }
@@ -37,14 +151,12 @@ body{
   font-family: var(--font);
   font-size: 15.5px;
   line-height: 1.6;
-  color: var(--ink);
-  background:
-    radial-gradient(1200px 600px at 50% -180px, #16456f 0%, transparent 65%),
-    radial-gradient(900px 500px at 50% 110%, #0a2440 0%, transparent 60%),
-    linear-gradient(180deg, var(--bg-dark) 0%, var(--bg-dark-2) 100%);
+  color: var(--text);
+  background: var(--page-glow-1), var(--page-glow-2), var(--page-base);
   background-attachment: fixed;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  transition: background .35s ease, color .3s ease;
 }
 body::before{
   content:"";
@@ -52,9 +164,10 @@ body::before{
   inset: 0;
   pointer-events: none;
   background-image:
-    radial-gradient(circle at 15% 20%, rgba(201,146,44,.07) 0, transparent 22%),
-    radial-gradient(circle at 85% 70%, rgba(120,180,255,.06) 0, transparent 25%);
+    radial-gradient(circle at 15% 20%, var(--page-deco-1) 0, transparent 22%),
+    radial-gradient(circle at 85% 70%, var(--page-deco-2) 0, transparent 25%);
   z-index: 0;
+  transition: background-image .35s ease;
 }
 
 .page{
@@ -66,30 +179,141 @@ body::before{
 }
 
 /* ============================================================
-   THANH CÔNG CỤ
+   NAVIGATION BAR
    ============================================================ */
-.toolbar{
-  display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-  margin-bottom: 14px;
+.navbar{
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--nav-border);
+  box-shadow: var(--nav-shadow);
+  transition: background .3s ease, border-color .3s ease, box-shadow .3s ease;
 }
-.btn-ghost{
-  border: 1px solid rgba(255,255,255,.22);
-  background: rgba(255,255,255,.07);
-  color: #d6e2ef;
-  font: inherit;
-  font-size: 13px;
-  padding: 7px 14px;
-  border-radius: 999px;
+.nav-inner{
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.nav-brand{
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: .92rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--nav-brand);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color .25s ease;
+}
+.nav-brand i{ color: var(--gold); font-size: 1rem; }
+.nav-brand:hover{ color: var(--gold); }
+
+.nav-links{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  list-style: none;
+  margin: 0 0 0 auto;
+  padding: 0;
+}
+.nav-links a{
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: .84rem;
+  font-weight: 600;
+  color: var(--nav-link);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 9px;
+  transition: .18s ease;
+  white-space: nowrap;
+}
+.nav-links a:hover{
+  color: var(--nav-link-hover);
+  background: var(--nav-hover-bg);
+}
+.nav-links a i{ font-size: .78rem; opacity: .85; }
+
+/* Nút đổi theme */
+.nav-theme{
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 1px solid var(--nav-btn-border);
+  background: var(--nav-btn-bg);
+  color: var(--nav-btn-color);
+  font-size: .95rem;
+  border-radius: 9px;
   cursor: pointer;
-  backdrop-filter: blur(4px);
   transition: .18s ease;
 }
-.btn-ghost:hover{
+.nav-theme:hover{
   border-color: var(--gold);
-  color: #fff;
-  background: rgba(201,146,44,.18);
+  color: var(--gold);
+  background: var(--nav-hover-bg);
+  transform: rotate(-12deg);
+}
+.nav-theme i{ line-height: 1; pointer-events: none; }
+
+/* Icon: dark theme hiện mặt trời, light theme hiện mặt trăng */
+.nav-theme .icon-moon{ display: none; }
+html[data-theme="light"] .nav-theme .icon-sun{ display: none; }
+html[data-theme="light"] .nav-theme .icon-moon{ display: inline-block; }
+
+.nav-toggle{
+  display: none;
+  flex: 0 0 auto;
+  border: 1px solid var(--nav-btn-border);
+  background: var(--nav-btn-bg);
+  color: var(--nav-btn-color);
+  font-size: 1rem;
+  padding: 8px 13px;
+  border-radius: 9px;
+  cursor: pointer;
+  transition: .18s ease;
+}
+.nav-toggle:hover{
+  border-color: var(--gold);
+  color: var(--gold);
+  background: var(--nav-hover-bg);
+}
+
+/* Mobile: thu gọn nav */
+@media (max-width: 760px){
+  .nav-brand{ margin-right: auto; }
+  .nav-toggle{ display: inline-flex; align-items: center; justify-content: center; }
+  .nav-links{
+    display: none;
+    flex-basis: 100%;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    margin: 10px 0 0;
+    padding-top: 10px;
+    border-top: 1px solid var(--nav-divider);
+  }
+  .nav-links.open{ display: flex; }
+  .nav-links a{
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+  .nav-links li{ width: 100%; }
 }
 
 /* ============================================================
@@ -102,14 +326,12 @@ body::before{
   align-items: stretch;
 }
 
-/* Mặc định: full width */
 .hero,
 .card,
 .achievement,
 .price-box,
 .footnotes{ grid-column: span 12; }
 
-/* Các span cho desktop */
 @media (min-width: 720px){
   .span-5{ grid-column: span 5; }
   .span-6{ grid-column: span 6; }
@@ -123,11 +345,13 @@ body::before{
   position: relative;
   padding: 24px 26px;
   background: var(--card);
-  border: 1px solid rgba(255,255,255,.10);
+  border: 1px solid var(--card-border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: var(--card-shadow);
+  color: var(--text);
   display: flex;
   flex-direction: column;
+  scroll-margin-top: 90px;
 }
 
 .section-title{
@@ -139,7 +363,7 @@ body::before{
   font-weight: 800;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--navy);
+  color: var(--heading);
   padding-bottom: 10px;
   border-bottom: 2px solid var(--line);
   position: relative;
@@ -154,7 +378,8 @@ body::before{
   height: 2px;
   background: var(--gold);
 }
-.section-title .ico{ font-size: 1rem; line-height: 1; }
+.section-title .ico{ font-size: 1rem; line-height: 1; color: var(--gold); }
+.section-title .ico i{ display: inline-block; }
 
 /* ============================================================
    HERO
@@ -166,9 +391,10 @@ body::before{
   gap: 26px;
   padding: 30px;
   background: var(--card);
-  border: 1px solid rgba(255,255,255,.10);
+  border: 1px solid var(--card-border);
   border-radius: var(--radius);
-  box-shadow: var(--shadow);
+  box-shadow: var(--card-shadow);
+  color: var(--text);
   overflow: hidden;
 }
 .hero::before{
@@ -176,7 +402,7 @@ body::before{
   position: absolute;
   inset: 0 auto 0 0;
   width: 6px;
-  background: linear-gradient(180deg, var(--gold), var(--navy-soft));
+  background: linear-gradient(180deg, rgb(206, 59, 97), rgb(19, 123, 171));
 }
 
 .avatar{
@@ -202,7 +428,7 @@ body::before{
 }
 .avatar.no-photo .avatar-initials{ display: block; }
 
-.hero-info{ min-width: 0; }
+.hero-info{ min-width: 0; flex: 1 1 auto; }
 
 .hero-name{
   margin: 0;
@@ -210,7 +436,7 @@ body::before{
   font-weight: 800;
   letter-spacing: .06em;
   text-transform: uppercase;
-  color: var(--navy);
+  color: var(--heading);
   line-height: 1.15;
 }
 .hero-role{
@@ -223,33 +449,34 @@ body::before{
 }
 .hero-tagline{
   margin: 12px 0 0;
-  color: var(--muted);
-  max-width: 52ch;
+  color: var(--text-muted);
+  max-width: 56ch;
 }
-.hero-badges{
-  display: flex;
-  flex-wrap: wrap;
+
+/* ==== LIÊN HỆ TRONG HERO ==== */
+.hero-contact{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
   gap: 8px;
-  margin-top: 16px;
+  margin-top: 18px;
+  text-align: left;
 }
-.badge{
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12.5px;
-  font-weight: 600;
-  padding: 5px 12px;
-  border-radius: 999px;
-  background: var(--gold-soft);
-  border: 1px solid #f0dfb6;
-  color: #8a6414;
+.hero-contact .contact-item{ padding: 9px 12px; }
+.hero-contact .contact-item .val{
+  font-size: .84rem;
+  white-space: normal;
+  overflow: visible;
+  text-overflow: clip;
+  word-break: break-word;
 }
-.badge.dark{
-  background: var(--navy);
-  border-color: var(--navy);
-  color: #fff;
+.hero-contact .contact-item .ico{ font-size: .95rem; width: 20px; }
+.hero-contact .copy-btn{ padding: 4px 8px; font-size: 11px; }
+
+.hero-note{
+  margin: 12px 0 0;
+  font-size: .82rem;
+  color: var(--text-muted);
 }
-.badge.dark strong{ color: var(--gold-light); }
 
 /* ============================================================
    DANH SÁCH
@@ -259,7 +486,7 @@ ul.clean li{
   position: relative;
   padding-left: 24px;
   margin-bottom: 9px;
-  color: #26384f;
+  color: var(--text);
 }
 ul.clean li:last-child{ margin-bottom: 0; }
 ul.clean li::before{
@@ -274,14 +501,15 @@ ul.clean li::before{
   box-shadow: 0 0 0 3px rgba(201,146,44,.16);
 }
 ul.check li::before{
-  content:"✓";
+  content:"\f00c";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
   width: auto; height: auto;
   left: 0; top: 0;
   background: none;
   box-shadow: none;
   color: #1d8a5a;
-  font-weight: 800;
-  font-size: 14px;
+  font-size: 13px;
 }
 
 /* ============================================================
@@ -297,10 +525,10 @@ ul.check li::before{
 .edu-main{
   font-size: 1rem;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--heading);
   line-height: 1.4;
 }
-.edu-sub{ color: var(--muted); font-size: .9rem; }
+.edu-sub{ color: var(--text-muted); font-size: .9rem; }
 
 .score-grid{
   display: grid;
@@ -312,14 +540,14 @@ ul.check li::before{
   text-align: center;
   padding: 14px 8px;
   border-radius: 12px;
-  background: #f6f9fc;
+  background: var(--card-soft);
   border: 1px solid var(--line);
 }
 .score .val{
   display: block;
   font-size: 1.4rem;
   font-weight: 800;
-  color: var(--navy);
+  color: var(--heading);
   line-height: 1.2;
 }
 .score .lbl{
@@ -327,14 +555,14 @@ ul.check li::before{
   font-size: .72rem;
   letter-spacing: .08em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--text-muted);
   margin-top: 3px;
 }
 .score.highlight{
-  background: var(--gold-soft);
-  border-color: #eed9a8;
+  background: var(--chip-bg);
+  border-color: var(--chip-border);
 }
-.score.highlight .val{ color: #8a6414; }
+.score.highlight .val{ color: var(--accent-strong); }
 
 .score .val .star{
   font-size: .6em;
@@ -345,7 +573,7 @@ ul.check li::before{
   cursor: pointer;
   font-weight: 800;
 }
-.score .val .star:hover{ color: #8a6414; text-decoration: underline; }
+.score .val .star:hover{ color: var(--accent-strong); text-decoration: underline; }
 
 /* ============================================================
    THÀNH TÍCH TIẾNG ANH — KHỐI NỔI BẬT
@@ -356,16 +584,18 @@ ul.check li::before{
   border: none;
   border-radius: var(--radius);
   overflow: hidden;
-  background: linear-gradient(140deg, var(--navy-soft) 0%, var(--navy) 55%, var(--navy-deep) 100%);
-  box-shadow: 0 14px 34px -18px rgba(0,0,0,.9);
-  color: #fff;
+  background: var(--block-bg);
+  box-shadow: var(--card-shadow);
+  color: var(--block-text);
+  scroll-margin-top: 90px;
 }
 .achievement .inner{ padding: 26px 26px 24px; }
 .achievement .section-title{
-  color: #fff;
-  border-bottom-color: rgba(255,255,255,.16);
+  color: var(--block-text);
+  border-bottom-color: var(--block-line);
 }
 .achievement .section-title::after{ background: var(--gold); }
+.achievement .section-title .ico{ color: var(--accent-strong); }
 
 .stat-grid{
   display: grid;
@@ -373,29 +603,34 @@ ul.check li::before{
   gap: 14px;
 }
 .stat{
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.14);
+  background: var(--block-item-bg);
+  border: 1px solid var(--block-item-bd);
   border-radius: 14px;
   padding: 16px 18px;
+  transition: background .3s ease, border-color .3s ease;
 }
 .stat .big{
   font-size: clamp(1.7rem, 5vw, 2.15rem);
   font-weight: 800;
   letter-spacing: .01em;
-  color: var(--gold-light);
+  color: var(--accent-strong);
   line-height: 1.1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
+.stat .big i{ font-size: .8em; }
 .stat .desc{
   margin-top: 6px;
   font-size: .9rem;
-  color: rgba(255,255,255,.82);
+  color: var(--block-muted);
 }
-.stat .desc strong{ color: #fff; font-weight: 700; }
+.stat .desc strong{ color: var(--block-text); font-weight: 700; }
 
 .achievement .note{
   margin: 16px 0 0;
   font-size: .84rem;
-  color: rgba(255,255,255,.6);
+  color: var(--block-muted);
 }
 
 /* ============================================================
@@ -404,14 +639,14 @@ ul.check li::before{
 .proof-gallery{
   margin-top: 20px;
   padding-top: 18px;
-  border-top: 1px solid rgba(255,255,255,.14);
+  border-top: 1px solid var(--block-line);
 }
 .proof-gallery .proof-label{
   font-size: .72rem;
   font-weight: 700;
   letter-spacing: .14em;
   text-transform: uppercase;
-  color: rgba(255,255,255,.55);
+  color: var(--block-muted);
   margin-bottom: 10px;
 }
 .proof-grid{
@@ -420,18 +655,20 @@ ul.check li::before{
   gap: 12px;
 }
 .proof-item{
-  background: #fff;
+  background: var(--card);
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 8px 20px -10px rgba(0,0,0,.7);
-  border: 1px solid rgba(255,255,255,.18);
+  box-shadow: 0 8px 20px -12px rgba(0,0,0,.55);
+  border: 1px solid var(--card-border);
+  margin: 0;
+  transition: background .3s ease, border-color .3s ease;
 }
 .proof-item img{
   display: block;
   width: 100%;
   height: 170px;
   object-fit: cover;
-  background: #eef2f7;
+  background: var(--card-soft);
   cursor: zoom-in;
   transition: transform .35s ease;
 }
@@ -440,17 +677,39 @@ ul.check li::before{
   padding: 9px 12px;
   font-size: .78rem;
   font-weight: 700;
-  color: var(--navy);
-  background: #fff;
+  color: var(--heading);
+  background: var(--card);
   text-align: center;
   line-height: 1.35;
+  transition: background .3s ease, color .3s ease;
 }
 .proof-item .cap small{
   display: block;
   font-weight: 500;
-  color: var(--muted);
+  color: var(--text-muted);
   font-size: .73rem;
   margin-top: 2px;
+}
+
+/* Nút Facebook trong khối Thành tích */
+.fb-link{
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: .82rem;
+  font-weight: 700;
+  color: var(--accent-strong);
+  text-decoration: none;
+  border: 1px solid var(--chip-border);
+  padding: 7px 14px;
+  border-radius: 999px;
+  transition: .2s;
+  margin-top: 8px;
+}
+.fb-link:hover{
+  background: var(--chip-bg);
+  border-color: var(--gold);
+  color: var(--accent-strong);
 }
 
 /* ============================================================
@@ -464,14 +723,14 @@ ul.check li::before{
 .pill{
   padding: 12px 14px;
   border-radius: 12px;
-  background: #f6f9fc;
+  background: var(--card-soft);
   border: 1px solid var(--line);
   font-size: .9rem;
-  color: #26384f;
+  color: var(--text);
 }
 .pill strong{
   display: block;
-  color: var(--navy);
+  color: var(--heading);
   font-size: .92rem;
   margin-bottom: 2px;
 }
@@ -492,13 +751,13 @@ ul.check li::before{
 }
 .meta-item .k{
   flex: 0 0 88px;
-  color: var(--muted);
+  color: var(--text-muted);
   font-size: .74rem;
   letter-spacing: .06em;
   text-transform: uppercase;
   padding-top: 3px;
 }
-.meta-item .v{ color: #26384f; font-weight: 600; }
+.meta-item .v{ color: var(--text); font-weight: 600; }
 
 /* ============================================================
    HỌC PHÍ
@@ -507,18 +766,19 @@ ul.check li::before{
   padding: 24px 22px;
   text-align: center;
   border-radius: var(--radius);
-  background: var(--gold-soft);
-  border: 2px dashed #e2c47f;
-  box-shadow: var(--shadow);
+  background: var(--price-bg);
+  border: 2px dashed var(--price-border);
+  box-shadow: var(--card-shadow);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: background .3s ease, border-color .3s ease;
 }
 .price-box .price{
-  font-size: clamp(1.9rem, 6vw, 2.4rem);
+  font-size: clamp(3.9rem, 6vw, 2.4rem);
   font-weight: 800;
-  color: #8a6414;
+  color: var(--price-text);
   letter-spacing: .01em;
   line-height: 1.1;
 }
@@ -529,44 +789,45 @@ ul.check li::before{
 }
 .price-box .price-sub{
   margin-top: 10px;
-  font-size: .88rem;
-  color: #96731f;
+  font-size: .99rem;
+  color: var(--price-sub);
   max-width: 28ch;
 }
-.price-box .price-sub strong{ color: #7a5710; }
+.price-box .price-sub strong{ color: var(--price-sub-strong); }
 
 /* ============================================================
-   LIÊN HỆ
+   CONTACT ITEM (dùng trong hero)
    ============================================================ */
-.contact-grid{
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 10px;
-}
 .contact-item{
   display: flex;
   align-items: center;
   gap: 10px;
   padding: 12px 14px;
   border-radius: 12px;
-  background: #f6f9fc;
+  background: var(--card-soft);
   border: 1px solid var(--line);
   min-width: 0;
 }
-.contact-item .ico{ font-size: 1.05rem; flex: 0 0 auto; }
+.contact-item .ico{
+  font-size: 1.05rem;
+  flex: 0 0 auto;
+  color: var(--accent-strong);
+  width: 22px;
+  text-align: center;
+}
 .contact-item .txt{ min-width: 0; flex: 1 1 auto; }
 .contact-item .lbl{
   display: block;
   font-size: .68rem;
   letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--text-muted);
 }
 .contact-item .val{
   display: block;
   font-size: .9rem;
   font-weight: 700;
-  color: var(--navy);
+  color: var(--heading);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -576,9 +837,9 @@ ul.check li::before{
 
 .copy-btn{
   flex: 0 0 auto;
-  border: 1px solid var(--line);
-  background: #fff;
-  color: var(--muted);
+  border: 1px solid var(--btn-border);
+  background: var(--btn-bg);
+  color: var(--btn-color);
   border-radius: 8px;
   padding: 5px 9px;
   font: inherit;
@@ -586,7 +847,7 @@ ul.check li::before{
   cursor: pointer;
   transition: .15s ease;
 }
-.copy-btn:hover{ border-color: var(--navy-soft); color: var(--navy); }
+.copy-btn:hover{ border-color: var(--gold); color: var(--btn-hover); }
 .copy-btn.done{ background: #1d8a5a; border-color: #1d8a5a; color: #fff; }
 
 /* ============================================================
@@ -595,12 +856,12 @@ ul.check li::before{
 .footnotes{
   padding: 16px 22px;
   border-radius: 14px;
-  background: rgba(255,255,255,.06);
-  border: 1px solid rgba(255,255,255,.14);
-  color: #cfdce9;
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  color: var(--text-muted);
   font-size: .84rem;
   line-height: 1.65;
-  scroll-margin-top: 24px;
+  scroll-margin-top: 90px;
 }
 .footnotes .fn-title{
   display: block;
@@ -608,21 +869,22 @@ ul.check li::before{
   font-weight: 800;
   letter-spacing: .16em;
   text-transform: uppercase;
-  color: var(--gold-light);
+  color: var(--accent-strong);
   margin-bottom: 6px;
 }
 .footnotes .fn-mark{
-  color: var(--gold-light);
+  color: var(--accent-strong);
   font-weight: 800;
   margin-right: 4px;
 }
 .footnotes p{ margin: 0; }
+.footnotes strong{ color: var(--heading); }
 
 .footnotes.flash{ animation: fnFlash 1.4s ease; }
 @keyframes fnFlash{
-  0%   { box-shadow: 0 0 0 0 rgba(201,146,44,0); background: rgba(255,255,255,.06); }
-  25%  { box-shadow: 0 0 0 4px rgba(201,146,44,.45); background: rgba(201,146,44,.18); }
-  100% { box-shadow: 0 0 0 0 rgba(201,146,44,0); background: rgba(255,255,255,.06); }
+  0%   { box-shadow: 0 0 0 0 rgba(201,146,44,0); }
+  25%  { box-shadow: 0 0 0 4px rgba(201,146,44,.45); }
+  100% { box-shadow: 0 0 0 0 rgba(201,146,44,0); }
 }
 
 /* ============================================================
@@ -632,7 +894,7 @@ ul.check li::before{
   margin-top: 22px;
   text-align: center;
   font-size: .78rem;
-  color: rgba(255,255,255,.42);
+  color: var(--text-muted);
 }
 
 /* ============================================================
@@ -668,14 +930,33 @@ ul.check li::before{
 }
 
 /* ============================================================
-   HIỆU ỨNG XUẤT HIỆN
+   HIỆU ỨNG XUẤT HIỆN + CHUYỂN THEME MƯỢT
    ============================================================ */
 .reveal{
   opacity: 0;
   transform: translateY(16px);
-  transition: opacity .55s ease, transform .55s ease;
+  transition:
+    opacity .55s ease,
+    transform .55s ease,
+    background-color .3s ease,
+    background .3s ease,
+    color .25s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
 }
 .reveal.in{ opacity: 1; transform: none; }
+
+.card, .hero, .achievement, .price-box, .footnotes,
+.stat, .score, .pill, .contact-item, .proof-item, .proof-item .cap,
+.copy-btn, .navbar, .nav-links a, .nav-toggle, .nav-theme {
+  transition:
+    background-color .3s ease,
+    background .3s ease,
+    color .25s ease,
+    border-color .3s ease,
+    box-shadow .3s ease;
+}
+.nav-theme{ transition: .18s ease; }
 
 /* ============================================================
    RESPONSIVE
@@ -690,10 +971,10 @@ ul.check li::before{
     inset: 0 0 auto 0;
     width: auto;
     height: 6px;
-    background: linear-gradient(90deg, var(--gold), var(--navy-soft));
+    background: linear-gradient(90deg, rgb(206, 59, 97), rgb(19, 123, 171));
   }
-  .hero-badges{ justify-content: center; }
   .avatar{ width: 112px; height: 112px; }
+  .hero-contact{ text-align: left; }
 }
 
 @media (max-width: 640px){
@@ -704,59 +985,52 @@ ul.check li::before{
   .proof-item img{ height: 200px; }
   .meta-item{ flex-direction: column; gap: 2px; }
   .meta-item .k{ flex: none; }
-}
-
-/* ============================================================
-   IN / LƯU PDF
-   ============================================================ */
-@media print{
-  body{
-    background: #fff !important;
-    font-size: 12px;
-    color: #12233a;
-  }
-  body::before{ display: none; }
-  .page{ max-width: none; padding: 0; }
-  .toolbar, .copy-btn, .foot{ display: none !important; }
-  .bento{ gap: 10px; }
-  .hero, .card, .achievement, .price-box, .footnotes{
-    box-shadow: none !important;
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-  .footnotes{
-    background: #f4f7fb !important;
-    border: 1px solid #dbe4ee !important;
-    color: #26384f !important;
-  }
-  .footnotes .fn-title,
-  .footnotes .fn-mark{ color: #8a6414 !important; }
-  .reveal{ opacity: 1 !important; transform: none !important; }
-  .achievement{
-    -webkit-print-color-adjust: exact;
-    print-color-adjust: exact;
-  }
+  .hero-contact{ grid-template-columns: 1fr; }
 }
 </style>
 </head>
 
 <body>
-<div class="page">
 
-  <!-- Thanh công cụ -->
-  <div class="toolbar">
-    <button class="btn-ghost" type="button" onclick="window.print()">🖨️ In / Lưu PDF</button>
+<!-- ============================================================
+     NAVIGATION BAR
+     ============================================================ -->
+<nav class="navbar" aria-label="Điều hướng chính">
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">
+      <i class="fa-solid fa-user-tie"></i> Phương Hòa Bình
+    </a>
+
+    <button class="nav-theme" type="button" aria-label="Đổi giao diện sáng / tối" title="Đổi giao diện sáng / tối">
+      <i class="fa-solid fa-sun icon-sun"></i>
+      <i class="fa-solid fa-moon icon-moon"></i>
+    </button>
+
+    <button class="nav-toggle" type="button" aria-label="Mở menu" aria-expanded="false" aria-controls="navLinks">
+      <i class="fa-solid fa-bars"></i>
+    </button>
+
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#hoc-van"><i class="fa-solid fa-graduation-cap"></i> Học vấn</a></li>
+      <li><a href="#thanh-tich"><i class="fa-solid fa-trophy"></i> Thành tích</a></li>
+      <li><a href="#phuong-phap"><i class="fa-solid fa-chalkboard-user"></i> Phương pháp</a></li>
+      <li><a href="#phu-hop"><i class="fa-solid fa-bullseye"></i> Phù hợp</a></li>
+      <li><a href="#hinh-thuc"><i class="fa-solid fa-laptop"></i> Hình thức</a></li>
+    </ul>
   </div>
+</nav>
+
+<div class="page">
 
   <!-- ============================================================
        BENTO GRID
        ============================================================ -->
   <div class="bento">
 
-    <!-- ===== HERO (span 12) ===== -->
+    <!-- ===== HERO (span 12) — đã tích hợp liên hệ ===== -->
     <header class="hero reveal">
       <div class="avatar" id="avatar">
-        <img src="pfp.JPG" alt="Ảnh chân dung Phương Hòa Bình"
+        <img src="pfp.jpg" alt="Ảnh chân dung Phương Hòa Bình"
              onerror="this.remove(); document.getElementById('avatar').classList.add('no-photo');">
         <span class="avatar-initials">PHB</span>
       </div>
@@ -768,18 +1042,43 @@ ul.check li::before{
           Sinh viên K71 Trường Đại học Khoa học Tự nhiên – ĐHQGHN, nhận ôn thi
           tiếng Anh và củng cố nền tảng cho học sinh, sinh viên.
         </p>
-        <div class="hero-badges">
-          <span class="badge dark">💵 <strong>50.000đ</strong>/giờ</span>
-          <span class="badge">🏆 IOE cấp Quốc gia</span>
-          <span class="badge">📘 Tiếng Anh THPTQG 9,75</span>
-          <span class="badge">💻 Online 1-1</span>
+
+        <!-- ==== THÔNG TIN LIÊN HỆ ==== -->
+        <div class="hero-contact">
+          <div class="contact-item">
+            <span class="ico"><i class="fa-solid fa-comment-dots"></i></span>
+            <span class="txt">
+              <span class="lbl">Zalo</span>
+              <span class="val"><a href="https://zalo.me/0964764538" target="_blank" rel="noopener">0964 764 538</a></span>
+            </span>
+            <button class="copy-btn" type="button" data-copy="0964764538">Copy</button>
+          </div>
+
+          <div class="contact-item">
+            <span class="ico"><i class="fa-solid fa-envelope"></i></span>
+            <span class="txt">
+              <span class="lbl">Email</span>
+              <span class="val"><a href="mailto:mynameisbinhyes@gmail.com">mynameisbinhyes@gmail.com</a></span>
+            </span>
+            <button class="copy-btn" type="button" data-copy="mynameisbinhyes@gmail.com">Copy</button>
+          </div>
+
+          <div class="contact-item">
+            <span class="ico"><i class="fa-brands fa-facebook"></i></span>
+            <span class="txt">
+              <span class="lbl">Facebook</span>
+              <span class="val"><a href="https://facebook.com/dothukhoaaa" target="_blank" rel="noopener">fb.com/dothukhoaaa</a></span>
+            </span>
+            <button class="copy-btn" type="button" data-copy="https://facebook.com/dothukhoaaa">Copy</button>
+          </div>
         </div>
+
       </div>
     </header>
 
     <!-- ===== HỌC VẤN (span 7) ===== -->
-    <section class="card span-7 reveal">
-      <h2 class="section-title"><span class="ico">🎓</span> Học vấn</h2>
+    <section class="card span-7 reveal" id="hoc-van">
+      <h2 class="section-title"><span class="ico"><i class="fa-solid fa-graduation-cap"></i></span> Học vấn</h2>
 
       <div class="edu-row">
         <span class="edu-main">Trường Đại học Khoa học Tự nhiên, ĐHQGHN</span>
@@ -797,14 +1096,6 @@ ul.check li::before{
           <span class="val">9,75</span>
           <span class="lbl">Tiếng Anh</span>
         </div>
-        <div class="score">
-          <span class="val">9,00</span>
-          <span class="lbl">Toán</span>
-        </div>
-        <div class="score">
-          <span class="val">8,25</span>
-          <span class="lbl">Vật lý</span>
-        </div>
       </div>
     </section>
 
@@ -812,108 +1103,90 @@ ul.check li::before{
     <aside class="price-box span-5 reveal">
       <div class="price">50.000<small>đ / giờ</small></div>
       <div class="price-sub">
-        <strong>30 phút trao đổi mục tiêu miễn phí</strong> trước buổi học đầu tiên.
+        <strong>30 phút trao đổi mục tiêu miễn phí trước buổi học đầu tiên.</strong>
       </div>
     </aside>
 
-  <!-- ===== THÀNH TÍCH TIẾNG ANH (span 12, dark) ===== -->
-  <section class="achievement reveal">
-    <div class="inner">
-      <h2 class="section-title"><span class="ico">🏆</span> Thành tích tiếng Anh</h2>
+    <!-- ===== THÀNH TÍCH TIẾNG ANH (span 12) và  ===== THỦ KHOA THPT VIỆT BẮC ===== -->
+    <section class="achievement reveal" id="thanh-tich">
+      <div class="inner">
+        <h2 class="section-title"><span class="ico"><i class="fa-solid fa-trophy"></i></span> Thành tích tiếng Anh</h2>
 
-      <div class="stat-grid">
-        <div class="stat">
-          <div class="big">9,75/10</div>
-          <div class="desc">
-            <strong>Điểm Tiếng Anh – THPTQG 2026</strong><br>
-            Thuộc tổ hợp xét tuyển A01
+        <div class="stat-grid">
+          <div class="stat">
+            <div class="big"><i class="fa-solid fa-medal"></i> Thủ khoa</div>
+            <div class="desc">
+              <strong>Thủ khoa kỳ thi THPT – Trường THPT Việt Bắc</strong>
+              <br>
+              <a href="https://www.facebook.com/VBLSSCL/posts/pfbid02CyLJCQGFiG3cZ1cGGivKPXGfj8pX2o9jfMWPkCFuccUrGkoU2gzPQeCNJqEYsQ18l"
+                 target="_blank" rel="noopener" class="fb-link">
+                <i class="fa-brands fa-facebook"></i> Xem bài đăng trên Facebook
+              </a>
+            </div>
+          </div>
+          <div class="stat">
+            <div class="big">166/200</div>
+            <div class="desc">
+              <strong>Kỳ thi IOE cấp Quốc gia</strong>
+            </div>
           </div>
         </div>
-        <div class="stat">
-          <div class="big">166/200</div>
-          <div class="desc">
-            <strong>Kỳ thi IOE cấp Quốc gia</strong><br>
-            Giải khuyến khích
+
+        <!-- ===== ẢNH BẰNG CHỨNG ===== -->
+        <div class="proof-gallery">
+          <div class="proof-label">Giấy chứng nhận &amp; giải thưởng</div>
+          <div class="proof-grid">
+
+            <figure class="proof-item">
+              <img src="val.jpg" alt="Thủ khoa THPT Việt Bắc"
+                  data-cap="Thủ khoa kỳ thi THPT – Trường THPT Việt Bắc"
+                  onerror="this.closest('.proof-item').style.display='none';">
+              <figcaption class="cap">
+                Thủ khoa THPT Việt Bắc
+                <small>Kỳ thi THPT 2026</small>
+              </figcaption>
+            </figure>
+
+            <figure class="proof-item">
+              <img src="nhat11tinh.jpg" alt="Giải Nhất IOE lớp 11 cấp Tỉnh/Thành phố"
+                  data-cap="Giải Nhất IOE lớp 11 – cấp Tỉnh/Thành phố"
+                  onerror="this.closest('.proof-item').style.display='none';">
+              <figcaption class="cap">
+                Giải Nhất IOE cấp Tỉnh
+                <small>Lớp 11</small>
+              </figcaption>
+            </figure>
+
+            <figure class="proof-item">
+              <img src="kk11qg.jpg" alt="Giải Khuyến khích IOE lớp 11 cấp Quốc gia"
+                  data-cap="Giải Khuyến khích IOE lớp 11 – cấp Quốc gia (166/200)"
+                  onerror="this.closest('.proof-item').style.display='none';">
+              <figcaption class="cap">
+                Giải Khuyến khích IOE cấp Quốc gia
+                <small>Lớp 11</small>
+              </figcaption>
+            </figure>
+
           </div>
         </div>
       </div>
-
-      <!-- ===== THỦ KHOA THPT VIỆT BẮC ===== -->
-      <div class="stat-grid" style="margin-top:14px;">
-        <div class="stat" style="grid-column:1/-1;">
-          <div class="big">🏅 Thủ khoa</div>
-          <div class="desc">
-            <strong>Thủ khoa kỳ thi THPT – Trường THPT Việt Bắc</strong><br>
-            Thành tích được ghi nhận trên trang thông tin của nhà trường.
-          </div>
-          <div style="margin-top:12px;">
-            <a href="https://www.facebook.com/VBLSSCL/posts/pfbid02CyLJCQGFiG3cZ1cGGivKPXGfj8pX2o9jfMWPkCFuccUrGkoU2gzPQeCNJqEYsQ18l" 
-              target="_blank" rel="noopener"
-              style="display:inline-flex;align-items:center;gap:6px;font-size:.82rem;font-weight:700;color:var(--gold-light);text-decoration:none;border:1px solid rgba(240,217,164,.3);padding:7px 14px;border-radius:999px;transition:.2s;"
-              onmouseover="this.style.background='rgba(240,217,164,.12)';this.style.borderColor='var(--gold)'"
-              onmouseout="this.style.background='transparent';this.style.borderColor='rgba(240,217,164,.3)'">
-              📘 Xem bài đăng trên Facebook
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- ===== ẢNH BẰNG CHỨNG (bao gồm val.jpg) ===== -->
-      <div class="proof-gallery">
-        <div class="proof-label">Giấy chứng nhận &amp; giải thưởng</div>
-        <div class="proof-grid">
-
-          <!-- ẢNH THỦ KHOA VIỆT BẮC -->
-          <figure class="proof-item">
-            <img src="val.jpg" alt="Thủ khoa THPT Việt Bắc"
-                data-cap="Thủ khoa kỳ thi THPT – Trường THPT Việt Bắc"
-                onerror="this.closest('.proof-item').style.display='none';">
-            <figcaption class="cap">
-              Thủ khoa THPT Việt Bắc
-              <small>Kỳ thi THPT 2026</small>
-            </figcaption>
-          </figure>
-
-          <figure class="proof-item">
-            <img src="nhat11tinh.jpg" alt="Giải Nhất IOE lớp 11 cấp Tỉnh/Thành phố"
-                data-cap="Giải Nhất IOE lớp 11 – cấp Tỉnh/Thành phố"
-                onerror="this.closest('.proof-item').style.display='none';">
-            <figcaption class="cap">
-              Giải Nhất IOE cấp Tỉnh
-              <small>Lớp 11</small>
-            </figcaption>
-          </figure>
-
-          <figure class="proof-item">
-            <img src="kk11qg.jpg" alt="Giải Khuyến khích IOE lớp 11 cấp Quốc gia"
-                data-cap="Giải Khuyến khích IOE lớp 11 – cấp Quốc gia (166/200)"
-                onerror="this.closest('.proof-item').style.display='none';">
-            <figcaption class="cap">
-              Giải Khuyến khích IOE cấp Quốc gia
-              <small>Lớp 11</small>
-            </figcaption>
-          </figure>
-
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
     <!-- ===== ƯU ĐIỂM / PHƯƠNG PHÁP (span 6) ===== -->
-    <section class="card span-6 reveal">
-      <h2 class="section-title"><span class="ico">👨‍🏫</span> Ưu điểm &amp; phương pháp</h2>
+    <section class="card span-6 reveal" id="phuong-phap">
+      <h2 class="section-title"><span class="ico"><i class="fa-solid fa-chalkboard-user"></i></span> Ưu điểm &amp; phương pháp</h2>
       <ul class="clean">
-        <li>Giải thích kiến thức theo hướng dễ hiểu, tập trung vào <strong>cách làm bài</strong>.</li>
-        <li>Hệ thống hóa ngữ pháp và từ vựng theo <strong>dạng bài</strong>, không học lan man.</li>
+        <li>Giải thích kiến thức theo hướng dễ hiểu, tập trung vào <strong>kiến thức cần có</strong>.</li>
+        <li>Hệ thống hóa ngữ pháp và từ vựng theo <strong>hướng mở</strong>.</li>
         <li>Chú trọng phát hiện và sửa <strong>lỗi sai</strong> của học viên.</li>
-        <li>Điều chỉnh tốc độ dạy theo trình độ từng người.</li>
-        <li>Tập trung vào mục tiêu thi, kèm <strong>chiến lược làm bài và tránh mất điểm</strong>.</li>
+        <li>Điều chỉnh tốc độ dạy phù hợp với từng người.</li>
+        <li>Tập trung vào kiến thức nền, bên cạnh <strong>chiến lược làm bài tránh mất điểm</strong>.</li>
       </ul>
     </section>
 
     <!-- ===== ĐỐI TƯỢNG HỌC VIÊN (span 6) ===== -->
-    <section class="card span-6 reveal">
-      <h2 class="section-title"><span class="ico">🎯</span> Phù hợp với</h2>
+    <section class="card span-6 reveal" id="phu-hop">
+      <h2 class="section-title"><span class="ico"><i class="fa-solid fa-bullseye"></i></span> Phù hợp với</h2>
       <div class="pill-grid">
         <div class="pill">
           <strong>Học sinh THCS – THPT</strong>
@@ -925,22 +1198,19 @@ ul.check li::before{
         </div>
         <div class="pill">
           <strong>Ôn thi tiếng Anh</strong>
-          Phục vụ mục tiêu học tập / học bổng.
+          Phục vụ mục tiêu học tập và giành học bổng.
         </div>
         <div class="pill">
-          <strong>Không cần IELTS</strong>
-          Không có nhu cầu hoặc không được tính IELTS.
+          <strong>Là nền tảng học IELTS</strong>
+          Rèn khả năng tư duy ngôn ngữ, giúp ôn thi IELTS dễ dàng.
         </div>
       </div>
-      <p style="margin:14px 0 0; font-size:.84rem; color:var(--muted);">
-        <em>Hướng chuyên biệt: ôn tiếng Anh cho mục tiêu học bổng STEM.</em>
-      </p>
     </section>
 
     <!-- ===== KINH NGHIỆM (span 5) ===== -->
-    <section class="card span-5 reveal">
-      <h2 class="section-title"><span class="ico">📋</span> Kinh nghiệm</h2>
-      <p style="margin:0; color:#26384f; font-size:.95rem;">
+    <section class="card span-5 reveal" id="kinh-nghiem">
+      <h2 class="section-title"><span class="ico"><i class="fa-solid fa-clipboard-list"></i></span> Kinh nghiệm</h2>
+      <p style="margin:0; color:var(--text); font-size:.95rem;">
         Hiện bắt đầu nhận học viên online.
         <strong>Chưa có kinh nghiệm gia sư chuyên nghiệp</strong>, nhưng có thành tích
         học tập và thi tiếng Anh thực tế, đồng thời xây dựng lộ trình học dựa trên
@@ -949,16 +1219,16 @@ ul.check li::before{
     </section>
 
     <!-- ===== HÌNH THỨC HỌC (span 7) ===== -->
-    <section class="card span-7 reveal">
-      <h2 class="section-title"><span class="ico">💻</span> Hình thức học</h2>
+    <section class="card span-7 reveal" id="hinh-thuc">
+      <h2 class="section-title"><span class="ico"><i class="fa-solid fa-laptop"></i></span> Hình thức học</h2>
       <div class="meta-grid">
         <div class="meta-item">
           <span class="k">Lớp</span>
-          <span class="v">Online 1-1</span>
+          <span class="v">Online</span>
         </div>
         <div class="meta-item">
           <span class="k">Nền tảng</span>
-          <span class="v">Google Meet / Zalo</span>
+          <span class="v">Google Meet / Microsoft Teams</span>
         </div>
         <div class="meta-item">
           <span class="k">Thời lượng</span>
@@ -966,63 +1236,20 @@ ul.check li::before{
         </div>
         <div class="meta-item">
           <span class="k">Công cụ</span>
-          <span class="v">Chia sẻ màn hình + tài liệu + bài tập</span>
-        </div>
-        <div class="meta-item">
-          <span class="k">Giữa buổi</span>
-          <span class="v">Có giao bài và chữa bài</span>
+          <span class="v">Bài giảng và tài liệu học tập</span>
         </div>
       </div>
     </section>
 
     <!-- ===== CAM KẾT (span 12) ===== -->
-    <section class="card reveal">
-      <h2 class="section-title"><span class="ico">📌</span> Cam kết</h2>
+    <section class="card reveal" id="cam-ket">
+      <h2 class="section-title"><span class="ico"><i class="fa-solid fa-thumbtack"></i></span> Cam kết</h2>
       <ul class="clean check">
         <li>Dạy đúng trình độ và mục tiêu của học viên.</li>
         <li>Chuẩn bị nội dung trước mỗi buổi học.</li>
         <li>Theo dõi các lỗi thường gặp và điều chỉnh nội dung ôn tập.</li>
-        <li><strong>Không hứa hẹn điểm số nếu không có cơ sở.</strong></li>
         <li>Học viên có thể trao đổi trước về mục tiêu và trình độ để xác định cách học phù hợp.</li>
       </ul>
-    </section>
-
-    <!-- ===== LIÊN HỆ (span 12) ===== -->
-    <section class="card reveal">
-      <h2 class="section-title"><span class="ico">📱</span> Liên hệ</h2>
-
-      <div class="contact-grid">
-        <div class="contact-item">
-          <span class="ico">💬</span>
-          <span class="txt">
-            <span class="lbl">Zalo</span>
-            <span class="val"><a href="https://zalo.me/0964764538" target="_blank" rel="noopener">0964 764 538</a></span>
-          </span>
-          <button class="copy-btn" type="button" data-copy="0000000000">Copy</button>
-        </div>
-
-        <div class="contact-item">
-          <span class="ico">✉️</span>
-          <span class="txt">
-            <span class="lbl">Email</span>
-            <span class="val"><a href="mailto:mynameisbinhyes@gmail.com">mynameisbinhyes@gmail.com</a></span>
-          </span>
-          <button class="copy-btn" type="button" data-copy="mynameisbinhyes@gmail.com">Copy</button>
-        </div>
-
-        <div class="contact-item">
-          <span class="ico">📘</span>
-          <span class="txt">
-            <span class="lbl">Facebook</span>
-            <span class="val"><a href="https://facebook.com/dothukhoaaa" target="_blank" rel="noopener">fb.com/dothukhoaaa</a></span>
-          </span>
-          <button class="copy-btn" type="button" data-copy="https://facebook.com/dothukhoaaa">Copy</button>
-        </div>
-      </div>
-
-      <p style="margin:16px 0 0; font-size:.83rem; color:var(--muted);">
-        Nhắn kèm <strong>trình độ hiện tại</strong> và <strong>mục tiêu</strong> để mình tư vấn cách học phù hợp trước.
-      </p>
     </section>
 
     <!-- ===== CHÚ THÍCH (span 12) ===== -->
@@ -1050,7 +1277,54 @@ ul.check li::before{
 
 <script>
 /* ============================================================
-   1. REVEAL KHI CUỘN
+   0. THEME TOGGLE (dark mặc định ⇄ light)
+   ============================================================ */
+(function () {
+  var root = document.documentElement;
+  var btn  = document.querySelector('.nav-theme');
+  if (!btn) return;
+
+  btn.addEventListener('click', function () {
+    var isLight = root.getAttribute('data-theme') === 'light';
+    if (isLight) {
+      root.removeAttribute('data-theme');           // về dark (mặc định)
+      try { localStorage.setItem('theme', 'dark'); } catch (e) {}
+    } else {
+      root.setAttribute('data-theme', 'light');
+      try { localStorage.setItem('theme', 'light'); } catch (e) {}
+    }
+  });
+})();
+
+/* ============================================================
+   1. NAV TOGGLE (mobile)
+   ============================================================ */
+(function () {
+  var toggle = document.querySelector('.nav-toggle');
+  var links  = document.getElementById('navLinks');
+  if (!toggle || !links) return;
+
+  toggle.addEventListener('click', function () {
+    var open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    var icon = toggle.querySelector('i');
+    if (icon) icon.className = open ? 'fa-solid fa-xmark' : 'fa-solid fa-bars';
+  });
+
+  links.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', function () {
+      if (window.matchMedia('(max-width: 760px)').matches) {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        var icon = toggle.querySelector('i');
+        if (icon) icon.className = 'fa-solid fa-bars';
+      }
+    });
+  });
+})();
+
+/* ============================================================
+   2. REVEAL KHI CUỘN
    ============================================================ */
 (function () {
   var items = document.querySelectorAll('.reveal');
@@ -1076,7 +1350,7 @@ ul.check li::before{
 })();
 
 /* ============================================================
-   2. COPY THÔNG TIN LIÊN HỆ
+   3. COPY THÔNG TIN LIÊN HỆ
    ============================================================ */
 (function () {
   document.querySelectorAll('.copy-btn').forEach(function (btn) {
@@ -1113,7 +1387,7 @@ ul.check li::before{
 })();
 
 /* ============================================================
-   3. NHẢY TỚI CHÚ THÍCH + NHẤP NHÁY
+   4. NHẢY TỚI CHÚ THÍCH + NHẤP NHÁY
    ============================================================ */
 (function () {
   document.querySelectorAll('a[href^="#footnote"]').forEach(function (link) {
@@ -1136,7 +1410,7 @@ ul.check li::before{
 })();
 
 /* ============================================================
-   4. LIGHTBOX ẢNH
+   5. LIGHTBOX ẢNH
    ============================================================ */
 (function () {
   var lb    = document.getElementById('lightbox');
